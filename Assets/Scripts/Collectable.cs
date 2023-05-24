@@ -8,7 +8,7 @@ public class Collectable : MonoBehaviour
     public Transform player;
     public NavMeshAgent navMeshAgent;
     public PlayerMovement playerMovement;
-    
+    public int collected=0;
     bool is_collected = false;
     
     void Start() {
@@ -18,7 +18,7 @@ public class Collectable : MonoBehaviour
     {
         if (!is_collected && other.transform == player)
         {
-            is_collected=true;
+            is_collected = true;
             playerMovement.collectables.Add(gameObject);
         }
     }
